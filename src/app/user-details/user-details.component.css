@@ -1,0 +1,81 @@
+.user-details-container {
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+    background-size: 400% 400%;
+    animation: gradientBackground 10s ease infinite alternate;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .user-details-container:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .user-details-container h2 {
+    text-align: center;
+    margin-bottom: 70px;
+    color: #333;
+    transition: color 0.3s ease;
+  }
+  
+  .user-details-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+    transition: color 0.3s ease;
+  }
+  
+  .user-details-container input[type="text"],
+  .user-details-container select {
+    width: calc(100% - 22px);
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+  }
+  
+  .user-details-container input[type="text"]:focus,
+  .user-details-container select:focus {
+    border-color: #007bff;
+  }
+  
+  .user-details-container input[type="radio"] {
+    margin-right: 10px;
+  }
+  
+  .user-details-container div {
+    margin-bottom: 10px;
+  }
+  
+  .user-details-container button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #4094ed;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .user-details-container button:hover {
+    background-color: #0056b3;
+  }
+  
+  .user-details-container div div {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  

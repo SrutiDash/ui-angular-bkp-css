@@ -1,0 +1,36 @@
+<div class="user-details-container">
+    <h2>User Details</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" [(ngModel)]="name" name="name" required>
+      </div>
+      <div>
+        <label for="address">Address:</label>
+        <input type="text" id="address" [(ngModel)]="address" name="address" required>
+      </div>
+      <div>
+        <label for="country">Country:</label>
+        <select id="country" [(ngModel)]="country" name="country" required>
+          <option *ngFor="let country of countries" [value]="country">{{country}}</option>
+        </select>
+      </div>
+      <div>
+        <label>Gender:</label>
+        <div>
+          <input type="radio" id="male" [(ngModel)]="gender" name="gender" value="male" required>
+          <label for="male">Male</label>
+        </div>
+        <div>
+          <input type="radio" id="female" [(ngModel)]="gender" name="gender" value="female" required>
+          <label for="female">Female</label>
+        </div>
+        <div>
+          <input type="radio" id="prefer_not_to_say" [(ngModel)]="gender" name="gender" value="prefer_not_to_say" required>
+          <label for="prefer_not_to_say">Prefer not to say</label>
+        </div>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  
