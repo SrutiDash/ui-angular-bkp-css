@@ -1,4 +1,4 @@
-body {
+/* body {
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -42,7 +42,7 @@ body {
     padding: 10px;
     width: calc(100% - 20px);
     border: 1px solid #8a8a8a; /* Black border */
-    border-radius: 5px;
+    /* border-radius: 5px;
     outline: none;
     background-color: #f5f5f5;
     transition: background-color 0.3s ease;
@@ -66,4 +66,31 @@ body {
 
 .login-container form button[type="submit"]:hover {
     background-color: #039cd9;
-}
+} */ 
+
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 16px;
+  }
+  
+  form {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  mat-form-field {
+    width: 100%;
+  }
+  
+  button {
+    align-self: center;
+    margin-top: 16px;
+  }
+  

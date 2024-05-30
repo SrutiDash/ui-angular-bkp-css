@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -7,13 +8,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  userId!: string;
-  password!: string;
+  loginForm: FormGroup;
 
-  constructor(private router: Router) {}
+  constructor(private fb: FormBuilder, private router: Router) {
+    this.loginForm = this.fb.group({
+      userId: ['', Validators.required],
+      password: ['', Validators.required]
+    });
+  }
 
   onSubmit() {
-    // Assuming validation is done, navigate to the user-details page
-    this.router.navigate(['/user-details']);
+    if (this.loginForm.valid) {
+      this.router.navigate(['/user-details']);
+    }
   }
 }

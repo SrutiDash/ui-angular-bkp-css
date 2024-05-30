@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-user-details',
@@ -7,22 +8,22 @@ import { Router } from '@angular/router';
   styleUrls: ['./user-details.component.css']
 })
 export class UserDetailsComponent {
-  name: string='';
-  address: string='';
-  country: string='';
-  gender: string='';
-  countries: string[] = ['India', 'Nepal', 'Japan']; // Replace with actual country names
+  userDetailsForm: FormGroup;
+  countries: string[] = ['India', 'Nepal', 'Japan'];
 
-  constructor(private router: Router) {}
+  constructor(private fb: FormBuilder, private router: Router) {
+    this.userDetailsForm = this.fb.group({
+      name: ['', Validators.required],
+      address: ['', Validators.required],
+      country: ['', Validators.required],
+      gender: ['', Validators.required]
+    });
+  }
 
   onSubmit() {
-    // Handle form submission
-    console.log('Form submitted:', {
-      name: this.name,
-      address: this.address,
-      country: this.country,
-      gender: this.gender,
-    });
-    this.router.navigate(['/login']);
+    if (this.userDetailsForm.valid) {
+      console.log('Form submitted:', this.userDetailsForm.value);
+      this.router.navigate(['/login']);
+    }
   }
 }

@@ -13,7 +13,9 @@
     </form>
   </div>
    -->
-<div class="login-container">
+
+   <!-- OLD -->
+<!-- <div class="login-container">
     <h2>Login</h2>
     <form (ngSubmit)="onSubmit()">
         <div>
@@ -26,5 +28,30 @@
         </div>
         <button type="submit">Submit</button>
     </form>
+</div> -->
+
+<!-- New -->
+<div class="login-container">
+  <h2>Login</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>User name</mat-label>
+      <input matInput formControlName="userId" required>
+      <mat-error *ngIf="loginForm.get('userId')?.hasError('required')">
+        User name is required
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" formControlName="password" required>
+      <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+        Password is required
+      </mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">Submit</button>
+  </form>
 </div>
+
+
+
 
