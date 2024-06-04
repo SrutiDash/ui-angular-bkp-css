@@ -1,3 +1,4 @@
+// src/app/user-details/user-details.component.ts
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';

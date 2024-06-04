@@ -1,74 +1,4 @@
-/* body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f0f0f0;
-}
-
-.login-container {
-    width: 300px;
-    padding: 30px;
-    border-radius: 10px;
-    background: linear-gradient(145deg, #e0e0e0, #ffffff);
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-    margin: auto;
-}
-
-.login-container h2 {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.login-container form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.login-container form div {
-    margin-bottom: 15px;
-    width: 100%;
-}
-
-.login-container form label {
-    margin-bottom: 5px;
-}
-
-.login-container form input[type="text"],
-.login-container form input[type="password"] {
-    padding: 10px;
-    width: calc(100% - 20px);
-    border: 1px solid #8a8a8a; /* Black border */
-    /* border-radius: 5px;
-    outline: none;
-    background-color: #f5f5f5;
-    transition: background-color 0.3s ease;
-}
-
-.login-container form input[type="text"]:focus,
-.login-container form input[type="password"]:focus {
-    background-color: #e0e0e0;
-}
-
-.login-container form button[type="submit"] {
-    padding: 10px;
-    width: calc(100% - 20px);
-    background-color: #18bbe0;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.login-container form button[type="submit"]:hover {
-    background-color: #039cd9;
-} */ 
-
-
+/* src/app/login/login.component.css */
 .login-container {
     display: flex;
     flex-direction: column;
@@ -76,21 +6,20 @@
     justify-content: center;
     height: 100vh;
     padding: 16px;
-  }
-  
-  form {
+}
+
+form {
     width: 100%;
     max-width: 400px;
     display: flex;
     flex-direction: column;
-  }
-  
-  mat-form-field {
+}
+
+mat-form-field {
     width: 100%;
-  }
-  
-  button {
+}
+
+button {
     align-self: center;
     margin-top: 16px;
-  }
-  
+}
