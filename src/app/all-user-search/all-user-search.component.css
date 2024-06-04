@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
     height: 100vh;
     padding: 16px;
   }
@@ -21,14 +20,15 @@
     width: 100%;
   }
   
-  button {
-    align-self: center;
+  .buttons {
+    display: flex;
+    justify-content: space-between;
     margin-top: 16px;
   }
   
   .results {
     width: 100%;
-    max-width: 600px;
+    max-width: 800px;
     margin-top: 16px;
     flex: 1;
     overflow-y: auto;  /* Scrollable results section */
@@ -36,7 +36,6 @@
   
   table {
     width: 100%;
-    margin-top: 16px;
   }
   
   th.mat-header-cell, td.mat-cell {

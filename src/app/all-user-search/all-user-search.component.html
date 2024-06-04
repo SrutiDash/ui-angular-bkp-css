@@ -22,11 +22,14 @@
             <mat-option *ngFor="let category of categories" [value]="category">{{category}}</mat-option>
           </mat-select>
         </mat-form-field>
-        <button mat-raised-button color="primary" type="submit">Filter</button>
+        <div class="buttons">
+          <button mat-raised-button color="primary" type="submit">Filter</button>
+          <button mat-raised-button type="button" (click)="onReset()">Reset</button>
+        </div>
       </form>
     </div>
     
-    <div class="results" *ngIf="userDetails.length > 0">
+    <div class="results" *ngIf="userDetails.length > 0; else noData">
       <h3>Filtered User Details</h3>
       <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
         <ng-container matColumnDef="user_name">
@@ -53,5 +56,8 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
     </div>
-  </div>
-  
+    
+    <ng-template #noData>
+        <div *ngIf="showNoDataMessage">No Data Found for Given Criteria</div>
+    </ng-template>
+</div>

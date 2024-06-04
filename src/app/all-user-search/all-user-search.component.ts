@@ -1,14 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { UserDetailsService } from '../user-details.service';
 import { MatTableDataSource } from '@angular/material/table';
-
-interface UserDetails {
-  user_name: string;
-  parent_name: string;
-  domain_name: string;
-  category_name: string;
-}
+import { UserDetailsService } from '../user-details.service';
 
 @Component({
   selector: 'app-all-user-search',
@@ -16,24 +9,23 @@ interface UserDetails {
   styleUrls: ['./all-user-search.component.css']
 })
 export class AllUserSearchComponent implements OnInit {
-  userDetails: UserDetails[] = [];
-  dataSource = new MatTableDataSource<UserDetails>(this.userDetails);
   filterForm: FormGroup;
-  displayedColumns: string[] = ['user_name', 'parent_name', 'domain_name', 'category_name']; // Add this line
-  categories = [
+  userDetails: any[] = [];
+  displayedColumns: string[] = ['user_name', 'parent_name', 'domain_name', 'category_name'];
+  dataSource = new MatTableDataSource<any>(this.userDetails);
+  domains: string[] = [
+    'Agriculture', 'Electronics', 'Merchant', 'Social', 'Healthcare', 'Home Appliances', 
+    'MerchantPay', 'IT', 'Arts', 'Finance', 'Retail', 'Consumer Electronics', 
+    'Science', 'Transportation', 'Cons', 'Literature', 'Education'
+  ];
+  categories: string[] = [
     'Eronics', 'Subscriber', 'Wholesale', 'Electronics', 'Retail', 'Bank Admin', 
     'Network Admin', 'Maths', 'HeadMerchant'
   ];
-  domains = [
-    'Agriculture', 'Electronics', 'Merchant', 'Social', 'Healthcare', 
-    'Home Appliances', 'MerchantPay', 'IT', 'Arts', 'Finance', 'Retail', 
-    'Consumer Electronics', 'Science', 'Transportation', 'Cons', 'Literature', 'Education'
-  ];
 
-  constructor(
-    private fb: FormBuilder,
-    private userDetailsService: UserDetailsService
-  ) {
+  showNoDataMessage: boolean = false;
+
+  constructor(private fb: FormBuilder, private userDetailsService: UserDetailsService) {
     this.filterForm = this.fb.group({
       user_name: [''],
       parent_name: [''],
@@ -43,21 +35,43 @@ export class AllUserSearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.fetchUserDetails();
-  }
-
-  fetchUserDetails(): void {
-    const params = this.filterForm.value;
-    this.userDetailsService.getUserDetails(params).subscribe(
-      data => {
-        this.userDetails = data;
-        this.dataSource.data = this.userDetails;
-      },
-      error => console.error('Error fetching user details', error)
-    );
+    this.onFilterSubmit(); // To load initial data
   }
 
   onFilterSubmit(): void {
-    this.fetchUserDetails();
+    const filters: { [key: string]: string } = {};
+
+    // Add parameters only if the form field is not empty
+    Object.keys(this.filterForm.value).forEach(key => {
+      const value = this.filterForm.value[key]?.trim();
+      if (value !== '') {
+        filters[key] = value;
+      }
+    });
+
+    this.userDetailsService.getUserDetails(filters).subscribe(data => {
+      this.userDetails = data;
+      this.dataSource.data = this.userDetails;
+      this.showNoDataMessage = this.userDetails.length === 0; // Show message if no data
+      if (this.showNoDataMessage) {
+        setTimeout(() => {
+          this.showNoDataMessage = false; // Hide message after 4 seconds
+        }, 4000);
+      }
+    }, error => {
+      // Handle error, such as displaying error message
+      console.error('Error fetching user details:', error);
+    });
+  }
+
+  onReset(): void {
+    this.filterForm.reset({
+      user_name: null,
+      parent_name: null,
+      domain_name: null,
+      category_name: null
+    });
+    this.userDetails = [];
+    this.dataSource.data = this.userDetails;
   }
 }
