@@ -29,7 +29,7 @@ export class LoginComponent {
       this.loginService.login(userId, password).subscribe(
         message => {
           if (message === 'Success') {
-            this.router.navigate(['/user-details']);
+            this.router.navigate(['/all-user-search']);  // Update the route here
           } else {
             this.errorMessage = message;
           }

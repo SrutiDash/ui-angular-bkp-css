@@ -1,0 +1,57 @@
+<div class="user-details-container">
+    <h2>All User Search</h2>
+    <div class="search-form">
+      <form [formGroup]="filterForm" (ngSubmit)="onFilterSubmit()">
+        <mat-form-field appearance="fill">
+          <mat-label>User name</mat-label>
+          <input matInput formControlName="user_name">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Parent name</mat-label>
+          <input matInput formControlName="parent_name">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Domain name</mat-label>
+          <mat-select formControlName="domain_name">
+            <mat-option *ngFor="let domain of domains" [value]="domain">{{domain}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Category name</mat-label>
+          <mat-select formControlName="category_name">
+            <mat-option *ngFor="let category of categories" [value]="category">{{category}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Filter</button>
+      </form>
+    </div>
+    
+    <div class="results" *ngIf="userDetails.length > 0">
+      <h3>Filtered User Details</h3>
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="user_name">
+          <th mat-header-cell *matHeaderCellDef> User Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.user_name}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="parent_name">
+          <th mat-header-cell *matHeaderCellDef> Parent Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.parent_name}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="domain_name">
+          <th mat-header-cell *matHeaderCellDef> Domain Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.domain_name}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="category_name">
+          <th mat-header-cell *matHeaderCellDef> Category Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.category_name}} </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+  </div>
+  
