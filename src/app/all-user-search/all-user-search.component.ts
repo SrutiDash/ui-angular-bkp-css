@@ -66,10 +66,10 @@ export class AllUserSearchComponent implements OnInit {
 
   onReset(): void {
     this.filterForm.reset({
-      user_name: null,
-      parent_name: null,
-      domain_name: null,
-      category_name: null
+      user_name: '',
+      parent_name: '',
+      domain_name: '',
+      category_name: ''
     });
     this.userDetails = [];
     this.dataSource.data = this.userDetails;
