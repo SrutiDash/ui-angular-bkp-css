@@ -29,6 +29,39 @@ button {
 
 /* src/app/login/login.component.css */
 
+/* Navbar styles */
+.navbar {
+    width: 100%;
+    background-color: #d11935; /* Set the background color to red */
+    padding: 16px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; /* Fix the navbar at the top */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure the navbar is above other content */
+    color: white; /* Set text color to white */
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 8px;
+    font-size: 16px;
+}
+
+.navbar-links a:hover {
+    text-decoration: underline;
+}
+
 .login-container {
     display: flex;
     flex-direction: column;
@@ -36,7 +69,8 @@ button {
     justify-content: center;
     height: 100vh;
     padding: 16px;
-    /* Remove border and shadow from login-container */
+    /* Adjust height and padding to account for the fixed navbar */
+    padding-top: 64px;
 }
 
 .form-box {
@@ -117,5 +151,6 @@ button:disabled {
     color: red;
     font-size: 12px;
 }
+
 
 
