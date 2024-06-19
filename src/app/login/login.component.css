@@ -1,5 +1,5 @@
 /* src/app/login/login.component.css */
-.login-container {
+/* .login-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,4 +22,100 @@ mat-form-field {
 button {
     align-self: center;
     margin-top: 16px;
+} */
+
+
+/* new */
+
+/* src/app/login/login.component.css */
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 16px;
+    /* Remove border and shadow from login-container */
 }
+
+.form-box {
+    width: 100%;
+    max-width: 400px;
+    padding: 32px; /* Add padding inside the form box */
+    border: 1px solid #ccc; /* Add border around the form box */
+    border-radius: 8px; /* Optional: Add rounded corners to the form box */
+    box-shadow: 0 4px 8px rgba(153, 86, 86, 0.1); /* Optional: Add a subtle shadow for better visualization */
+    background-color: #fff; /* Optional: Ensure a white background */
+}
+
+h2 {
+    font-family: Arial, Helvetica, sans-serif; /* Specify the desired font family for the Login text */
+    font-size: 23px;
+    position: relative;
+    margin-bottom: 16px; /* Adjust space below the Login text */
+    text-align: left; /* Left align the text */
+    width: 100%; /* Ensure the width of h2 matches the width of the container */
+}
+
+h2::after {
+    content: "";
+    display: block;
+    width: 100%; /* Make the underline span the width of the h2 element */
+    height: 1px; /* Adjust thickness of the underline */
+    background-color: #c0c0c0; /* Adjust color of the underline */
+    margin: 10px 0 0; /* Adjust margin above and below the underline */
+    position: absolute; /* Use absolute positioning */
+    left: 0; /* Position it to the left edge of the parent */
+    bottom: -5px; /* Adjust as necessary to place it below the text */
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.form-field {
+    width: 100%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white; /* Ensure input fields have white background */
+}
+
+button {
+    align-self: center;
+    margin-top: 16px;
+    padding: 8px 12px;
+    background-color: #d11935; /* Change color as per your theme */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #e31837;
+    cursor: not-allowed;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+}
+
+

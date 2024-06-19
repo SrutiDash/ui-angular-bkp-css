@@ -1,6 +1,6 @@
 <!-- src/app/login/login.component.html -->
 
-<div class="login-container">
+<!-- <div class="login-container">
   <h2>Login</h2>
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <mat-form-field appearance="fill">
@@ -20,8 +20,84 @@
     <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">Submit</button>
   </form>
   <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
-</div>
+</div> -->
 
+<!-- <div>
+  <h2>Login</h2>
+  <form>
+
+  </form>
+</div> -->
+
+<!-- <div class="login-container">
+  <h2>Login</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>User name</mat-label>
+      <input matInput formControlName="userId" required>
+      <mat-error *ngIf="loginForm.get('userId')?.hasError('required')">
+        User name is required
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" formControlName="password" required>
+      <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+        Password is required
+      </mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">Submit</button>
+  </form>
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+</div> -->
+
+<!-- <div class="login-container">
+  <h2>Login</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="form-field">
+      <label for="userId">Username</label>
+      <input id="userId" type="text" formControlName="userId" required>
+      <div *ngIf="loginForm.get('userId')?.hasError('required')" class="error-message">
+        User name is required
+      </div>
+    </div>
+    <div class="form-field">
+      <label for="password">Password</label>
+      <input id="password" type="password" formControlName="password" required>
+      <div *ngIf="loginForm.get('password')?.hasError('required')" class="error-message">
+        Password is required
+      </div>
+    </div>
+    <button type="submit" [disabled]="loginForm.invalid">Submit</button>
+  </form>
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+</div> -->
+
+<!-- new after box -->
+
+<div class="login-container">
+  <div class="form-box">
+    <h2>Login</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-field">
+        <label for="userId">Username</label>
+        <input id="userId" type="text" formControlName="userId" required>
+        <div *ngIf="loginForm.get('userId')?.hasError('required')" class="error-message">
+          User name is required
+        </div>
+      </div>
+      <div class="form-field">
+        <label for="password">Password</label>
+        <input id="password" type="password" formControlName="password" required>
+        <div *ngIf="loginForm.get('password')?.hasError('required')" class="error-message">
+          Password is required
+        </div>
+      </div>
+      <button type="submit" [disabled]="loginForm.invalid">Submit</button>
+    </form>
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+  </div>
+</div>
 
 
 
