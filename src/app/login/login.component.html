@@ -101,7 +101,7 @@
 
 <!-- new after nav bar -->
 
-<div class="navbar">
+<!-- <div class="navbar">
   <div class="navbar-brand">MyApp</div>
   <div class="navbar-links">
       <a href="#">Home</a>
@@ -132,7 +132,43 @@
       </form>
       <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
   </div>
+</div> -->
+
+<div class="navbar">
+  <a href="#" class="navbar-brand">
+      <img src="../login/comvivalogo.png" alt="comviva">
+  </a>
+  <div class="navbar-links">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+  </div>
 </div>
+
+<div class="login-container">
+  <div class="form-box">
+      <h2>Login</h2>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <div class="form-field">
+              <label for="userId">Username</label>
+              <input id="userId" type="text" formControlName="userId" required>
+              <div *ngIf="loginForm.get('userId')?.hasError('required')" class="error-message">
+                  User name is required
+              </div>
+          </div>
+          <div class="form-field">
+              <label for="password">Password</label>
+              <input id="password" type="password" formControlName="password" required>
+              <div *ngIf="loginForm.get('password')?.hasError('required')" class="error-message">
+                  Password is required
+              </div>
+          </div>
+          <button type="submit" [disabled]="loginForm.invalid">Submit</button>
+      </form>
+      <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+  </div>
+</div>
+
 
 
 
