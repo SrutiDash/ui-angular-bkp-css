@@ -134,7 +134,9 @@
   </div>
 </div> -->
 
-<div class="navbar">
+<!-- ------------------------------------------ -->
+
+<!-- <div class="navbar">
   <a href="#" class="navbar-brand">
       <img src="../login/comvivalogo.png" alt="comviva">
   </a>
@@ -166,6 +168,89 @@
           <button type="submit" [disabled]="loginForm.invalid">Submit</button>
       </form>
       <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+  </div>
+</div> -->
+
+<!-- -----------------------new---------------------- -->
+
+<!-- navbar component -->
+<mat-toolbar color="primary" class="navbar">
+  <a href="#" class="navbar-brand">
+    <img src="assets/comvivalogo.png" alt="comviva" class="logo">
+  </a>
+  <div class="navbar-links">
+    <a mat-button href="#">Home</a>
+    <a mat-button href="#">About</a>
+    <a mat-button href="#">Contact</a>
+  </div>
+</mat-toolbar>
+
+<!-- login form component -->
+<!-- <div class="login-container">
+  <div class="form-box">
+    <h2>Login</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-field">
+        <label for="userId">Username</label>
+        <input id="userId" type="text" formControlName="userId" required>
+        <div *ngIf="loginForm.get('userId')?.hasError('required')" class="error-message">
+          User name is required
+        </div>
+      </div>
+      <div class="form-field">
+        <label for="password">Password</label>
+        <input id="password" type="password" formControlName="password" required>
+        <div *ngIf="loginForm.get('password')?.hasError('required')" class="error-message">
+          Password is required
+        </div>
+      </div>
+      <button type="submit" [disabled]="loginForm.invalid">Submit</button>
+    </form>
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+  </div>
+</div> -->
+
+<!-- new -->
+
+<mat-toolbar color="primary" class="navbar">
+  <a href="#" class="navbar-brand">
+    <!-- <img src="assets/comvivalogo.png" alt="comviva" class="logo">
+      -->
+      <!-- <img src="assets/comvivalogo.png"/> -->
+      <!-- <img [src]="'assets/comvivalogo.png'" alt="comviva">
+        -->
+      <img src="https://i.ibb.co/3ztvV0G/comvivalogo.png" alt="comvivalogo" border="0">
+      <!-- added this image using imgbb -->
+  </a>
+  <div class="navbar-links">
+    <a mat-button href="#">Home</a>
+    <a mat-button href="#">About</a>
+    <a mat-button href="#">Contact</a>
+  </div>
+</mat-toolbar>
+
+<!-- login form component -->
+<div class="login-container">
+  <div class="form-box">
+    <h2>Login</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-field">
+        <label for="userId">Username</label>
+        <input id="userId" type="text" formControlName="userId" required>
+        <div *ngIf="loginForm.get('userId')?.hasError('required')" class="error-message">
+          User name is required
+        </div>
+      </div>
+      <div class="form-field">
+        <label for="password">Password</label>
+        <input id="password" type="password" formControlName="password" required>
+        <div *ngIf="loginForm.get('password')?.hasError('required')" class="error-message">
+          Password is required
+        </div>
+      </div>
+      <button type="submit" [disabled]="loginForm.invalid">Submit</button>
+    </form>
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
   </div>
 </div>
 
