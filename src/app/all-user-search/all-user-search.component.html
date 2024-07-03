@@ -65,7 +65,7 @@
 
 <!-- ------------------new---------------------->
 
-<div class="user-details-container">
+<!-- <div class="user-details-container">
   <h2>All User Search</h2>
   <div class="search-form">
     <form [formGroup]="filterForm" (ngSubmit)="onFilterSubmit()">
@@ -129,4 +129,544 @@
       No user details found for the specified filter.
     </div>
   </ng-template>
+</div> -->
+
+
+<!-- ------------------new---------------------- -->
+
+
+<!-- <div class="user-details-container">
+  <h2>All User Search</h2>
+  <div class="search-form">
+    <form [formGroup]="filterForm" (ngSubmit)="onFilterSubmit()">
+      <mat-form-field appearance="fill">
+        <mat-label>User name</mat-label>
+        <input matInput formControlName="user_name">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Parent name</mat-label>
+        <input matInput formControlName="parent_name">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Domain name</mat-label>
+        <mat-select formControlName="domain_name">
+          <mat-option *ngFor="let domain of domains" [value]="domain">{{domain}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Category name</mat-label>
+        <mat-select formControlName="category_name">
+          <mat-option *ngFor="let category of categories" [value]="category">{{category}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div class="buttons">
+        <button mat-raised-button color="primary" type="submit">Filter</button>
+        <button mat-raised-button type="button" (click)="onReset()">Reset</button>
+      </div>
+    </form>
+  </div>
+  
+  <div class="results" *ngIf="userDetails.length > 0; else noData">
+    <h3>Filtered User Details</h3>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="user_name">
+        <th mat-header-cell *matHeaderCellDef> User Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.user_name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="parent_name">
+        <th mat-header-cell *matHeaderCellDef> Parent Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.parent_name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="domain_name">
+        <th mat-header-cell *matHeaderCellDef> Domain Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.domain_name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="category_name">
+        <th mat-header-cell *matHeaderCellDef> Category Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.category_name}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+  
+  <ng-template #noData>
+    <div *ngIf="showNoDataMessage" class="no-data-message">
+      No user details found for the specified filter.
+    </div>
+  </ng-template>
+</div> -->
+
+<!-- ------------------new---------------------- -->
+
+<!-- <div class="user-details-container">
+  <h2>All User Search</h2>
+  <div class="search-form">
+    <form [formGroup]="filterForm" (ngSubmit)="onFilterSubmit()">
+      <mat-form-field appearance="fill">
+        <mat-label>User name</mat-label>
+        <input matInput formControlName="user_name">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Parent name</mat-label>
+        <input matInput formControlName="parent_name">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Domain name</mat-label>
+        <mat-select formControlName="domain_name">
+          <mat-option *ngFor="let domain of domains" [value]="domain">{{domain}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Category name</mat-label>
+        <mat-select formControlName="category_name">
+          <mat-option *ngFor="let category of categories" [value]="category">{{category}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div class="buttons">
+        <button mat-raised-button color="primary" type="submit">Filter</button>
+        <button mat-raised-button type="button" (click)="onReset()">Reset</button>
+      </div>
+    </form>
+  </div>
+  
+  <div class="results" *ngIf="userDetails.length > 0; else noData">
+    <h3>Filtered User Details</h3>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="user_name">
+        <th mat-header-cell *matHeaderCellDef> User Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.user_name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="parent_name">
+        <th mat-header-cell *matHeaderCellDef> Parent Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.parent_name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="domain_name">
+        <th mat-header-cell *matHeaderCellDef> Domain Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.domain_name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="category_name">
+        <th mat-header-cell *matHeaderCellDef> Category Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.category_name}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+  
+  <ng-template #noData>
+    <div *ngIf="showNoDataMessage" class="no-data-message">
+      No user details found for the specified filter.
+    </div>
+  </ng-template>
+</div> -->
+
+<!-- new2 -->
+
+<!-- <div class="user-details-container">
+  <h2>All User Search</h2>
+  <div class="search-form">
+    <form [formGroup]="filterForm" (ngSubmit)="onFilterSubmit()">
+      <mat-form-field class="custom-form-field">
+        <mat-label>User name</mat-label>
+        <input matInput formControlName="user_name">
+      </mat-form-field>
+      <mat-form-field class="custom-form-field">
+        <mat-label>Parent name</mat-label>
+        <input matInput formControlName="parent_name">
+      </mat-form-field>
+      <mat-form-field class="custom-form-field">
+        <mat-label>Domain name</mat-label>
+        <mat-select formControlName="domain_name">
+          <mat-option *ngFor="let domain of domains" [value]="domain">{{domain}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="custom-form-field">
+        <mat-label>Category name</mat-label>
+        <mat-select formControlName="category_name">
+          <mat-option *ngFor="let category of categories" [value]="category">{{category}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div class="buttons">
+        <button mat-raised-button color="primary" type="submit">Filter</button>
+        <button mat-raised-button type="button" (click)="onReset()">Reset</button>
+      </div>
+    </form>
+  </div>
+  
+  <div class="results" *ngIf="userDetails.length > 0; else noData">
+    <h3>Filtered User Details</h3>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="user_name">
+        <th mat-header-cell *matHeaderCellDef> User Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.user_name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="parent_name">
+        <th mat-header-cell *matHeaderCellDef> Parent Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.parent_name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="domain_name">
+        <th mat-header-cell *matHeaderCellDef> Domain Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.domain_name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="category_name">
+        <th mat-header-cell *matHeaderCellDef> Category Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.category_name}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+  
+  <ng-template #noData>
+    <div *ngIf="showNoDataMessage" class="no-data-message">
+      No user details found for the specified filter.
+    </div>
+  </ng-template>
+</div> -->
+
+<!-- new3 -->
+
+<!-- <div class="user-details-container">
+  <h1>All User Search</h1>
+  <div class="search-form">
+    <form [formGroup]="filterForm" (ngSubmit)="onFilterSubmit()">
+      <mat-form-field appearance="fill" class="custom-form-field">
+        <mat-label>User name</mat-label>
+        <input matInput formControlName="user_name">
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="custom-form-field">
+        <mat-label>Parent name</mat-label>
+        <input matInput formControlName="parent_name">
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="custom-form-field">
+        <mat-label>Domain name</mat-label>
+        <mat-select formControlName="domain_name">
+          <mat-option *ngFor="let domain of domains" [value]="domain">{{ domain }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="custom-form-field">
+        <mat-label>Category name</mat-label>
+        <mat-select formControlName="category_name">
+          <mat-option *ngFor="let category of categories" [value]="category">{{ category }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div class="buttons">
+        <button mat-raised-button color="primary" type="submit">Filter</button>
+        <button mat-raised-button color="accent" type="button" (click)="onReset()">Reset</button>
+      </div>
+    </form>
+  </div>
+  <div class="results" *ngIf="userDetails.length > 0">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="user_name">
+        <th mat-header-cell *matHeaderCellDef> User Name </th>
+        <td mat-cell *matCellDef="let user"> {{user.user_name}} </td>
+      </ng-container>
+      <ng-container matColumnDef="parent_name">
+        <th mat-header-cell *matHeaderCellDef> Parent Name </th>
+        <td mat-cell *matCellDef="let user"> {{user.parent_name}} </td>
+      </ng-container>
+      <ng-container matColumnDef="domain_name">
+        <th mat-header-cell *matHeaderCellDef> Domain Name </th>
+        <td mat-cell *matCellDef="let user"> {{user.domain_name}} </td>
+      </ng-container>
+      <ng-container matColumnDef="category_name">
+        <th mat-header-cell *matHeaderCellDef> Category Name </th>
+        <td mat-cell *matCellDef="let user"> {{user.category_name}} </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+  <div *ngIf="showNoDataMessage">
+    <p>No data found.</p>
+  </div>
+</div> -->
+
+
+<!-- new4 -->
+
+<!-- <div class="user-details-container">
+  <h1>All User Search</h1>
+  <div class="search-form">
+    <form [formGroup]="filterForm" (ngSubmit)="onFilterSubmit()">
+      <div class="form-field">
+        <label for="userId">User name</label>
+        <input id="userId" matInput formControlName="user_name" required>
+      </div>
+      <div class="form-field">
+        <label for="parentId">Parent name</label>
+        <input id="parentId" matInput formControlName="parent_name" required>
+      </div>
+      <div class="form-field">
+        <label for="domainId">Domain name</label>
+        <mat-select id="domainId" formControlName="domain_name" required>
+          <mat-option *ngFor="let domain of domains" [value]="domain">{{ domain }}</mat-option>
+        </mat-select>
+      </div>
+      <div class="form-field">
+        <label for="categoryId">Category name</label>
+        <mat-select id="categoryId" formControlName="category_name" required>
+          <mat-option *ngFor="let category of categories" [value]="category">{{ category }}</mat-option>
+        </mat-select>
+      </div>
+      <div class="buttons">
+        <button mat-raised-button color="primary" type="submit">Filter</button>
+        <button mat-raised-button color="accent" type="button" (click)="onReset()">Reset</button>
+      </div>
+    </form>
+  </div>
+  <div class="results" *ngIf="userDetails.length > 0">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="user_name">
+        <th mat-header-cell *matHeaderCellDef> User Name </th>
+        <td mat-cell *matCellDef="let user"> {{user.user_name}} </td>
+      </ng-container>
+      <ng-container matColumnDef="parent_name">
+        <th mat-header-cell *matHeaderCellDef> Parent Name </th>
+        <td mat-cell *matCellDef="let user"> {{user.parent_name}} </td>
+      </ng-container>
+      <ng-container matColumnDef="domain_name">
+        <th mat-header-cell *matHeaderCellDef> Domain Name </th>
+        <td mat-cell *matCellDef="let user"> {{user.domain_name}} </td>
+      </ng-container>
+      <ng-container matColumnDef="category_name">
+        <th mat-header-cell *matHeaderCellDef> Category Name </th>
+        <td mat-cell *matCellDef="let user"> {{user.category_name}} </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+  <div *ngIf="showNoDataMessage">
+    <p>No data found.</p>
+  </div>
+</div>
+ -->
+
+
+ <!-- new5 -->
+
+ <!-- <div class="user-details-container">
+  <h1>All User Search</h1>
+  <div class="search-form">
+    <form [formGroup]="filterForm" (ngSubmit)="onFilterSubmit()">
+      <div class="form-field">
+        <label for="userId">User name</label>
+        <input id="userId" matInput formControlName="user_name" required>
+      </div>
+      <div class="form-field">
+        <label for="parentId">Parent name</label>
+        <input id="parentId" matInput formControlName="parent_name" required>
+      </div>
+      <div class="form-field">
+        <mat-form-field appearance="fill">
+          <mat-label>Domain name</mat-label>
+          <mat-select id="domainId" formControlName="domain_name" required>
+            <mat-option *ngFor="let domain of domains" [value]="domain">{{ domain }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="form-field">
+        <mat-form-field appearance="fill">
+          <mat-label>Category name</mat-label>
+          <mat-select id="categoryId" formControlName="category_name" required>
+            <mat-option *ngFor="let category of categories" [value]="category">{{ category }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="buttons">
+        <button mat-raised-button color="primary" type="submit">Filter</button>
+        <button mat-raised-button color="accent" type="button" (click)="onReset()">Reset</button>
+      </div>
+    </form>
+  </div>
+  <div class="results" *ngIf="userDetails.length > 0">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="user_name">
+        <th mat-header-cell *matHeaderCellDef> User Name </th>
+        <td mat-cell *matCellDef="let user"> {{user.user_name}} </td>
+      </ng-container>
+      <ng-container matColumnDef="parent_name">
+        <th mat-header-cell *matHeaderCellDef> Parent Name </th>
+        <td mat-cell *matCellDef="let user"> {{user.parent_name}} </td>
+      </ng-container>
+      <ng-container matColumnDef="domain_name">
+        <th mat-header-cell *matHeaderCellDef> Domain Name </th>
+        <td mat-cell *matCellDef="let user"> {{user.domain_name}} </td>
+      </ng-container>
+      <ng-container matColumnDef="category_name">
+        <th mat-header-cell *matHeaderCellDef> Category Name </th>
+        <td mat-cell *matCellDef="let user"> {{user.category_name}} </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+  <div *ngIf="showNoDataMessage">
+    <p>No data found.</p>
+  </div>
+</div> -->
+<!-- 
+------------------------------------------ -->
+
+<!-- <div class="user-details-container">
+  <h1>All User Search</h1>
+  <div class="search-form">
+    <form [formGroup]="filterForm" (ngSubmit)="onFilterSubmit()">
+      <div class="form-field">
+        <label for="userId">User name</label>
+        <input id="userId" matInput formControlName="user_name" required>
+      </div>
+      <div class="form-field">
+        <label for="parentId">Parent name</label>
+        <input id="parentId" matInput formControlName="parent_name" required>
+      </div>
+
+<div class="form-field">
+    <mat-label>Domain name</mat-label>
+    <mat-select id="domainId" formControlName="domain_name" required>
+      <mat-option *ngFor="let domain of domains" [value]="domain">{{ domain }}</mat-option>
+    </mat-select>
+</div>
+
+<div class="form-field">
+    <mat-label>Category name</mat-label>
+    <mat-select id="categoryId" formControlName="category_name" required>
+      <mat-option *ngFor="let category of categories" [value]="category">{{ category }}</mat-option>
+    </mat-select>
+</div>
+
+      <div class="buttons">
+        <button mat-raised-button color="primary" type="submit">Filter</button>
+        <button mat-raised-button color="accent" type="button" (click)="onReset()">Reset</button>
+      </div>
+    </form>
+  </div>
+  <div class="results" *ngIf="userDetails.length > 0">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="user_name">
+        <th mat-header-cell *matHeaderCellDef> User Name </th>
+        <td mat-cell *matCellDef="let user"> {{user.user_name}} </td>
+      </ng-container>
+      <ng-container matColumnDef="parent_name">
+        <th mat-header-cell *matHeaderCellDef> Parent Name </th>
+        <td mat-cell *matCellDef="let user"> {{user.parent_name}} </td>
+      </ng-container>
+      <ng-container matColumnDef="domain_name">
+        <th mat-header-cell *matHeaderCellDef> Domain Name </th>
+        <td mat-cell *matCellDef="let user"> {{user.domain_name}} </td>
+      </ng-container>
+      <ng-container matColumnDef="category_name">
+        <th mat-header-cell *matHeaderCellDef> Category Name </th>
+        <td mat-cell *matCellDef="let user"> {{user.category_name}} </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+  <div *ngIf="showNoDataMessage">
+    <p>No data found.</p>
+  </div>
+</div>
+ -->
+
+<!-- 
+ new -->
+
+ <mat-toolbar color="primary" class="navbar">
+  <a href="#" class="navbar-brand">
+    <img src="assets/comvivalogo.png" alt="comviva" class="logo">
+  </a>
+  <div class="navbar-links">
+    <a mat-button href="#">Home</a>
+  </div>
+</mat-toolbar>
+
+<mat-toolbar color="primary" class="navbar">
+  <a href="#" class="navbar-brand">
+    <!-- <img src="assets/comvivalogo.png" alt="comviva" class="logo">
+      -->
+      <!-- <img src="assets/comvivalogo.png"/> -->
+      <!-- <img [src]="'assets/comvivalogo.png'" alt="comviva">
+        -->
+      <img src="https://i.ibb.co/3ztvV0G/comvivalogo.png" alt="comvivalogo" border="0">
+      <!-- added this image using imgbb -->
+  </a>
+  <div class="navbar-links">
+    <a mat-button href="#">Home</a>
+  </div>
+</mat-toolbar>
+
+ <div class="user-details-container">
+  <h6>All User Search</h6>
+  <div class="search-form">
+    <form [formGroup]="filterForm" (ngSubmit)="onFilterSubmit()">
+      <div class="form-field">
+        <label for="userId">User name</label>
+        <input id="userId" matInput formControlName="user_name" required>
+      </div>
+      <div class="form-field">
+        <label for="parentId">Parent name</label>
+        <input id="parentId" matInput formControlName="parent_name" required>
+      </div>
+
+      <div class="form-field">
+        <label for="domainId">Domain name</label>
+        <mat-select id="domainId" formControlName="domain_name" required>
+          <mat-option *ngFor="let domain of domains" [value]="domain">{{ domain }}</mat-option>
+        </mat-select>
+      </div>
+
+      <div class="form-field">
+        <label for="categoryId">Category name</label>
+        <mat-select id="categoryId" formControlName="category_name" required>
+          <mat-option *ngFor="let category of categories" [value]="category">{{ category }}</mat-option>
+        </mat-select>
+      </div>
+
+      <div class="buttons">
+        <button mat-raised-button color="primary" type="submit">Filter</button>
+        <button mat-raised-button color="accent" type="button" (click)="onReset()">Reset</button>
+      </div>
+    </form>
+  </div>
+  <div class="results" *ngIf="userDetails.length > 0">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="user_name">
+        <th mat-header-cell *matHeaderCellDef> User Name </th>
+        <td mat-cell *matCellDef="let user"> {{user.user_name}} </td>
+      </ng-container>
+      <ng-container matColumnDef="parent_name">
+        <th mat-header-cell *matHeaderCellDef> Parent Name </th>
+        <td mat-cell *matCellDef="let user"> {{user.parent_name}} </td>
+      </ng-container>
+      <ng-container matColumnDef="domain_name">
+        <th mat-header-cell *matHeaderCellDef> Domain Name </th>
+        <td mat-cell *matCellDef="let user"> {{user.domain_name}} </td>
+      </ng-container>
+      <ng-container matColumnDef="category_name">
+        <th mat-header-cell *matHeaderCellDef> Category Name </th>
+        <td mat-cell *matCellDef="let user"> {{user.category_name}} </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+  <div *ngIf="showNoDataMessage">
+    <p>No data found.</p>
+  </div>
 </div>

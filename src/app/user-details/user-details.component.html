@@ -1,4 +1,89 @@
 <!-- src/app/user-details/user-details.component.html -->
+<!-- <div class="user-details-container">
+  <h2>User Details</h2>
+  <form [formGroup]="userDetailsForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" required>
+      <mat-error *ngIf="userDetailsForm.get('name')?.hasError('required')">
+        Name is required
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Address</mat-label>
+      <input matInput formControlName="address" required>
+      <mat-error *ngIf="userDetailsForm.get('address')?.hasError('required')">
+        Address is required
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Country</mat-label>
+      <mat-select formControlName="country" required>
+        <mat-option *ngFor="let country of countries" [value]="country">{{country}}</mat-option>
+      </mat-select>
+      <mat-error *ngIf="userDetailsForm.get('country')?.hasError('required')">
+        Country is required
+      </mat-error>
+    </mat-form-field>
+    <div class="gender-group">
+      <label>Gender:</label>
+      <mat-radio-group formControlName="gender" required>
+        <mat-radio-button value="male">Male</mat-radio-button>
+        <mat-radio-button value="female">Female</mat-radio-button>
+        <mat-radio-button value="prefer_not_to_say">Prefer not to say</mat-radio-button>
+      </mat-radio-group>
+      <mat-error *ngIf="userDetailsForm.get('gender')?.hasError('required')">
+        Gender is required
+      </mat-error>
+    </div>
+    <button mat-raised-button color="primary" type="submit" [disabled]="userDetailsForm.invalid">Submit</button>
+  </form>
+</div> -->
+
+<!-- -----------------------new---------------------- -->
+
+<!-- src/app/user-details/user-details.component.html -->
+<!-- <div class="user-details-container">
+  <h2>User Details</h2>
+  <form [formGroup]="userDetailsForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" required>
+      <mat-error *ngIf="userDetailsForm.get('name')?.hasError('required')">
+        Name is required
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Address</mat-label>
+      <input matInput formControlName="address" required>
+      <mat-error *ngIf="userDetailsForm.get('address')?.hasError('required')">
+        Address is required
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Country</mat-label>
+      <mat-select formControlName="country" required>
+        <mat-option *ngFor="let country of countries" [value]="country">{{country}}</mat-option>
+      </mat-select>
+      <mat-error *ngIf="userDetailsForm.get('country')?.hasError('required')">
+        Country is required
+      </mat-error>
+    </mat-form-field>
+    <div class="gender-group">
+      <label>Gender:</label>
+      <mat-radio-group formControlName="gender" required>
+        <mat-radio-button value="male">Male</mat-radio-button>
+        <mat-radio-button value="female">Female</mat-radio-button>
+        <mat-radio-button value="prefer_not_to_say">Prefer not to say</mat-radio-button>
+      </mat-radio-group>
+      <mat-error *ngIf="userDetailsForm.get('gender')?.hasError('required')">
+        Gender is required
+      </mat-error>
+    </div>
+    <button mat-raised-button color="primary" type="submit" [disabled]="userDetailsForm.invalid">Submit</button>
+  </form>
+</div> -->
+
 <div class="user-details-container">
   <h2>User Details</h2>
   <form [formGroup]="userDetailsForm" (ngSubmit)="onSubmit()">

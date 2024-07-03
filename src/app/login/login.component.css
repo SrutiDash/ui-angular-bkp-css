@@ -34,16 +34,15 @@ button {
 /* --------------------------------------------------- */
 
 .navbar {
-    background-color: #c81832; /* Set the background color to red */
-    color: white; /* Set text color to white */
+    background-color: #c81832; 
+    color: white; 
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed; /* Fix the navbar at the top */
-    top: 0;
+    position: fixed; 
     left: 0;
     width: 100%;
-    z-index: 1000; /* Ensure the navbar is above other content */
+    z-index: 1000; 
   }
   
   .navbar-brand {
@@ -52,8 +51,8 @@ button {
   }
   
   .navbar-brand .logo {
-    height: 40px; /* Adjust the height of the logo */
-    margin-right: 8px; /* Adjust the space between the logo and the brand text */
+    height: 40px; 
+    margin-right: 8px; 
   }
   
   .navbar-links a {
@@ -74,7 +73,7 @@ button {
     justify-content: center;
     height: 100vh;
     padding: 16px;
-    padding-top: 64px; /* Adjust padding to account for the fixed navbar */
+    padding-top: 64px; 
   }
   
   .form-box {
